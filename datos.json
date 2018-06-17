@@ -1,0 +1,49 @@
+[
+	{
+		"id":"1",
+		"nombre":"Rioja Alta 1998",
+		"descripcion":"Excelente vino de reserva, curado en barricas de roble durante 72 meses. Sabor intenso ideal para carnes.",
+		"precio":25,
+		"imagen":"wine1.jpg"
+	},
+	
+	{
+		"id":"2",
+		"nombre":"Bierzo 2014",
+		"descripcion":"Vino espumoso de alto nivel de sabores afrutados. Su conservación junto al Bierzo lo hacen único.",
+		"precio":12,
+		"imagen":"wine2.jpg"
+	},
+	
+	{
+		"id":"3",
+		"nombre":"Macán 2012",
+		"descripcion":"Vino tinto Macán, Vino de Rioja. Productor: Bodegas Benjamin de Rothschild Vega Sicilia.",
+		"precio":49,
+		"imagen":"wine3.jpg"
+	},
+	
+	{
+		"id":"4",
+		"nombre":"Sauternes 2009",
+		"descripcion":"Criado durante 48 meses en barricas de roble francés.",
+		"precio":57,
+		"imagen":"wine4.jpg"
+	},
+	
+	{
+		"id":"5",
+		"nombre":"Cune Tinto Crianza",
+		"descripcion":"Un buen vino de crianza. Vino de Rioja. Productor: Cune (CVNE)",
+		"precio":7,
+		"imagen":"wine5.jpg"
+	},
+	
+	{
+		"id":"6",
+		"nombre":"La Serra 2012",
+		"descripcion":"Criado en barricas de roble francés durante 6 meses en contacto con sus lías finas.",
+		"precio":24,
+		"imagen":"wine6.jpg"
+	}
+]

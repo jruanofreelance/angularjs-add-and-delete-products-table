@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wine Store</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="angularjs-1.7.0.js"></script>
+	<script src="main.js"></script>
+</head>
+
+<body>
+    <div ng-app="myBasket" ng-controller="basketController">
+    	<h1>Wine Store</h1>
+        <div id="carrito">
+            <h3 class="tituloCarrito">Basket</h3>
+        	<table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Quantity</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Amount</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <body>
+                    <tr ng-repeat="articuloEnCarrito in carrito">
+                        <span>{{$index + 1}}</span>
+                        <td row="{{$index}}">{{articuloEnCarrito.articuloEnCarritoNuevo.id}}</td>
+                        <td>
+                            <input type="number" ng-model="articuloEnCarrito.cantidad" />
+                        </td>
+                        <td>{{articuloEnCarrito.articuloEnCarritoNuevo.nombre}}</td>
+                        <td>{{articuloEnCarrito.articuloEnCarritoNuevo.precio}} €</td>
+                        <td>{{articuloEnCarrito.cantidad * articuloEnCarrito.articuloEnCarritoNuevo.precio}} €</td>
+                        <td><input class="botones" type="button" value="eliminar" ng-click="eliminar($index)"/></td>
+                    </tr>
+                    <tr><td colspan=4>Total basket</td><td ng-style="estilo()"><b>{{total()}} €</b></td><td><button class="botones">Checkout</button></td></tr>
+                </body>
+            </table>
+        </div>
+
+        <div id="contenido">
+            <h3 class="tituloProductos">Products</h3>
+            <div class="articulo" ng-repeat="producto in productos">
+                <p>Id: {{producto.id}}
+                <br/><br/>
+                Name:</p>
+                <h3>{{producto.nombre}}</h3>
+                <img class="anchoImagen" src="{{producto.imagen}}" />
+                <p class="descripcionProducto"><strong>Description:</strong><br/>{{producto.descripcion}}</p>
+				<h2>Price: {{producto.precio}} €</h2>
+                <input class="botones" type="button" value="comprar" ng-click="agregar(producto)" />
+            </div>
+        </div>
+   
+	</div>
+</body>
+</html>
