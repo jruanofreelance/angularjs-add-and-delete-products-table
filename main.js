@@ -9,74 +9,72 @@ myBasket.controller("basketController",function($scope,$http){
 
 		}
 
-	var respuesta = $http(config);
-					
-	respuesta.then(function(response){
+	$http(config).then(function(response){
 					  
-		$scope.productos=response.data;
+		$scope.products = response.data;
 						
 	});
 
-	$scope.carrito = [];
+	$scope.basket = [];
 		    
-	$scope.agregar = function(p){
+	$scope.addProduct = function(p){
 
-		var articuloEnCarritoActual;
+		var currentItem;
 
-		for(var i = 0; i < $scope.carrito.length; i++){
+		for(var i = 0; i < $scope.basket.length; i++){
 
-		    if($scope.carrito[i].articuloEnCarritoNuevo.id == p.id){
+		    if($scope.basket[i].newItem.id == p.id){
 
-		        articuloEnCarritoActual = $scope.carrito[i];
+		        currentItem = $scope.basket[i];
 
 		    }
 
 		}
 
-		if(!articuloEnCarritoActual){
+		if(!currentItem){
 
-		    $scope.carrito.push({
+		    $scope.basket.push({
 
-		        articuloEnCarritoNuevo: p,
-		        cantidad: 1
+		        newItem: p,
+		        quantity: 1
 
 		    });
 
 		}else{
 
-		    articuloEnCarritoActual.cantidad++;
+		    currentItem.quantity++;
 
 		}
 
 	}
 
-	$scope.eliminar = function(fila) {
+	$scope.removeProduct = function(fila) {
 		    
-		$scope.carrito.splice(fila, 1);
+		$scope.basket.splice(fila, 1);
 		    
 	}
 
 	$scope.total = function () {
 
-		var totalADevolver = 0;
+		var totalAmount = 0;
 
-		for (var i = 0; i < $scope.carrito.length; i++) {
+		for (var i = 0; i < $scope.basket.length; i++) {
 
-		    totalADevolver = totalADevolver + $scope.carrito[i].cantidad * $scope.carrito[i].articuloEnCarritoNuevo.precio;
+		    totalAmount = totalAmount + $scope.basket[i].quantity * $scope.basket[i].newItem.price;
 
-		    if($scope.carrito[i].cantidad<1){
+		    if($scope.basket[i].quantity<1){
 
-		        $scope.carrito[i].cantidad=1;
+		        $scope.basket[i].quantity=1;
 		            	
 		    }
 		            
 		}
 
-		return totalADevolver;
+		return totalAmount;
 
 	};
 
-	$scope.estilo = function(){
+	$scope.style = function(){
 
 		return {'background-color':'rgba(253,207,109,0.75)','color':'gray'};
 		    	

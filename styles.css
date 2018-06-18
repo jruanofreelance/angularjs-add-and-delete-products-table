@@ -3,19 +3,19 @@ html{
 	border: 5px ridge lightblue;
 }
 
-#contenido{
+#container{
 	width:606px;
 	margin:50px auto;
 }
 
-.articulo{
+.item{
 	float:left;
 	width:180px;
 	height: 500px;
 	margin-left: 20px;
 }
 
-#carrito{
+#basket{
 	clear:both;
 	border:  2px dashed orange;
 	width:606px;
@@ -40,34 +40,34 @@ th{
 	background: lightblue;
 }
 
-.tituloProductos{
+.productsTitle{
 	border:2px dotted lightblue;
 	text-align: center;
 }
 
-.tituloCarrito{
+.basketTitle{
 	border:2px dotted lightblue;
 	text-align: center;
 }
 
-.botones{
+.buttons{
 	font-size: 13px; 
 	line-height: 1; 
 	background-color: orange;
 	cursor: pointer;
 }
 
-.botones:hover{
+.buttons:hover{
 	background-color: lightblue;
 	color: #fff;
 	cursor: pointer; 
 }
 
-.descripcionProducto{
+.productsDescription{
 	text-align : justify;
 }
 
-.anchoImagen{
+.widthImage{
 	width: 150px;
 }
 
